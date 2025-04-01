@@ -6,24 +6,24 @@
 
 
 class Consulta {
-private:
-    std::string motivo;
-    DtFecha fechaConsulta;
+    private:
+        std::string motivo;
+        DtFecha fechaConsulta;
 
-public:
-    // Constructor
-    Consulta(std::string motivo, DtFecha fechaConsulta);
+    public:
+        // Constructor
+        Consulta(std::string motivo, DtFecha fechaConsulta);
 
-    // Getters
-    std::string getMotivo() const;
-    DtFecha getFechaConsulta() const;
+        // Getters
+        std::string getMotivo() const;
+        DtFecha getFechaConsulta() const;
 
-    // Setters
-    void setMotivo(std::string motivo);
-    void setFechaConsulta(DtFecha fechaConsulta);
+        // Setters
+        void setMotivo(std::string motivo);
+        void setFechaConsulta(DtFecha fechaConsulta);
 
-    // Destructor
-    virtual ~Consulta();
+        // Destructor
+        virtual ~Consulta();
 };
 
 #endif

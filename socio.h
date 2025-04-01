@@ -8,32 +8,32 @@
 
 
 class Socio {
-private:
-    std::string ci;
-    std::string nombre;
-    DtFecha fechaIngreso;
-    std::Vector<Consulta*> consultas;
+    private:
+        std::string ci;
+        std::string nombre;
+        DtFecha fechaIngreso;
+        std::Vector<Consulta*> consultas;
 
-public:
-    // Constructor
-    Socio(std::string ci, std::string nombre, DtFecha fechaIngreso);
+    public:
+        // Constructor
+        Socio(std::string ci, std::string nombre, DtFecha fechaIngreso);
 
-    // Getters
-    std::string getCi() const;
-    std::string getNombre() const;
-    DtFecha getFechaIngreso() const;
+        // Getters
+        std::string getCi() const;
+        std::string getNombre() const;
+        DtFecha getFechaIngreso() const;
 
-    // Setters
-    void setCi(std::string ci);
-    void setNombre(std::string nombre);
-    void setFechaIngreso(DtFecha fechaIngreso);
+        // Setters
+        void setCi(std::string ci);
+        void setNombre(std::string nombre);
+        void setFechaIngreso(DtFecha fechaIngreso);
 
-    // Metodos
-    void agregarConsulta(Consulta* consulta);
-    void listarConsultas() const;
+        // Metodos
+        void agregarConsulta(Consulta* consulta);
+        void listarConsultas() const;
 
-    // Destructor
-    virtual ~Socio();
+        // Destructor
+        virtual ~Socio();
 };
 
 #endif
