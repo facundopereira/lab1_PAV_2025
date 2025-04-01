@@ -1,7 +1,9 @@
-#include "Consulta.cpp"
+#include "Consulta.h"
+#include <iostream>
+
 
 // Constructor
-Consulta::Consulta(std::string motivo, DtFecha fechaConsulta) : motivo(motivo), fechaCOnsulta(fechaConsulta) {}
+Consulta::Consulta(std::string motivo, DtFecha fechaConsulta) : motivo(motivo), fechaConsulta(fechaConsulta) {}
 
 
 // Getters

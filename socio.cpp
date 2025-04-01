@@ -1,5 +1,8 @@
 #include "Socio.h"
 
+#include <iostream>
+
+
 // Constructor
 Socio::Socio(std::string ci, std::string nombre, DtFecha fechaIngreso) : ci(ci), nombre(nombre), fechaIngreso(fechaIngreso) {}
 
@@ -48,7 +51,10 @@ void Socio::listarConsultas() const {
 // Destructor
 Socio::~Socio() {
     for (Consulta* consulta : consultas) {
-        delete consulta;
+        if (consulta) {
+            delete consulta;
+        }
     }
     consultas.clear();
 }
+

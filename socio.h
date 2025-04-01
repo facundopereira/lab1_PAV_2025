@@ -12,7 +12,7 @@ class Socio {
         std::string ci;
         std::string nombre;
         DtFecha fechaIngreso;
-        std::Vector<Consulta*> consultas;
+        std::vector<Consulta*> consultas;
 
     public:
         // Constructor
