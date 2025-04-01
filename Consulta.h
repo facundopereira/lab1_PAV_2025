@@ -21,6 +21,9 @@ public:
     // Setters
     void setMotivo(std::string motivo);
     void setFechaConsulta(DtFecha fechaConsulta);
+
+    // Destructor
+    virtual ~Consulta();
 };
 
 #endif
