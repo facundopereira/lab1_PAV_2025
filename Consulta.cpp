@@ -21,3 +21,8 @@ void Consulta::setMotivo(std::string motivo) {
 void Consulta::setFechaConsulta(DtFecha fechaConsulta) {
     this->fechaConsulta = fechaConsulta;
 }
+
+// Destructor
+Consulta::~Consulta() {
+    std::cout << "Destructor de Consulta " << std::endl;
+}

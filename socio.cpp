@@ -30,3 +30,25 @@ void Socio::setNombre(std::string nombre) {
 void Socio::setFechaIngreso(DtFecha fechaIngreso) {
     this->fechaIngreso = fechaIngreso;
 }
+
+
+// Metodos
+void Socio::agregarConsulta(Consulta* consulta) {
+    consultas.push_back(consulta);
+}
+
+void Socio::listarConsultas() const {
+    std::cout << "Consultas de " << nombre << " (" << ci << "):\n";
+    for (Consulta* consulta : consultas) {
+        std::cout << " - " << consulta->getFechaConsulta().toString()
+                << " Motivo: " << consulta->getMotivo() << std::endl;
+    }
+}
+
+// Destructor
+Socio::~Socio() {
+    for (Consulta* consulta : consultas) {
+        delete consulta;
+    }
+    consultas.clear();
+}
