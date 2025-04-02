@@ -15,8 +15,8 @@ class Consulta {
         Consulta(std::string motivo, DtFecha fechaConsulta);
 
         // Getters
-        std::string getMotivo() const;
-        DtFecha getFechaConsulta() const;
+        std::string getMotivo();
+        DtFecha getFechaConsulta();
 
         // Setters
         void setMotivo(std::string motivo);

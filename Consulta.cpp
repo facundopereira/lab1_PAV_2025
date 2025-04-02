@@ -7,11 +7,11 @@ Consulta::Consulta(std::string motivo, DtFecha fechaConsulta) : motivo(motivo), 
 
 
 // Getters
-std::string Consulta::getMotivo() const {
+std::string Consulta::getMotivo() {
     return this->motivo;
 }
 
-DtFecha Consulta::getFechaConsulta() const {
+DtFecha Consulta::getFechaConsulta() {
     return this->fechaConsulta;
 }
 

@@ -4,7 +4,6 @@
 #include "DtFecha.h" 
 #include "Consulta.h"
 #include <string>
-#include <vector>
 
 
 class Socio {
@@ -12,16 +11,20 @@ class Socio {
         std::string ci;
         std::string nombre;
         DtFecha fechaIngreso;
-        std::vector<Consulta*> consultas;
+        Consulta* consultas[20];
+        Mascota* Mascota[10];
+        int topeConsulta, topeMascota;
 
     public:
         // Constructor
-        Socio(std::string ci, std::string nombre, DtFecha fechaIngreso);
+        Socio(std::string ci, std::string nombre, DtFecha fechaIngreso, Mascota* Mascota);
 
         // Getters
-        std::string getCi() const;
-        std::string getNombre() const;
-        DtFecha getFechaIngreso() const;
+        std::string getCi();
+        std::string getNombre();
+        DtFecha getFechaIngreso();
+        int getTopeConsulta();
+        int getTopeMascota();
 
         // Setters
         void setCi(std::string ci);
@@ -30,7 +33,10 @@ class Socio {
 
         // Metodos
         void agregarConsulta(Consulta* consulta);
-        void listarConsultas() const;
+        void listarConsultas();
+
+        void agregarMascota(Mascota* mascota);
+        void listarMascotas();
 
         // Destructor
         virtual ~Socio();

@@ -4,21 +4,29 @@
 
 
 // Constructor
-Socio::Socio(std::string ci, std::string nombre, DtFecha fechaIngreso) : ci(ci), nombre(nombre), fechaIngreso(fechaIngreso) {}
+Socio::Socio(std::string ci, std::string nombre, DtFecha fechaIngreso, Mascota* mascota) : ci(ci), nombre(nombre), fechaIngreso(fechaIngreso), mascota(mascota), topeConsulta(0), topeMascota(1) {}
 
 
 // Getters
-std::string Socio::getCi() const {
+std::string Socio::getCi() {
     return this->ci;
 }
 
-std::string Socio::getNombre() const {
+std::string Socio::getNombre() {
     return this->nombre;
 }
 
 
-DtFecha Socio::getFechaIngreso() const {
+DtFecha Socio::getFechaIngreso() {
     return this->fechaIngreso;
+}
+
+int Socio::getTopeConsulta() {
+    return this->TopeConsulta;
+}
+
+int Socio::getTopeMascota() {
+    return this->topeMascota;
 }
 
 // Setters
@@ -34,18 +42,46 @@ void Socio::setFechaIngreso(DtFecha fechaIngreso) {
     this->fechaIngreso = fechaIngreso;
 }
 
+void setTopeConsulta(int topeConsulta) {
+    this->topeConsulta = topeConsulta;
+}
+
+void setTopeMascota(int topeMascota) {
+    this->topeMascota = topeMascota;
+}
+
 
 // Metodos
 void Socio::agregarConsulta(Consulta* consulta) {
-    consultas.push_back(consulta);
+    int tope = getTopeConsulta();
+
+    if ( tope <= 20 ) {
+        consultas[tope] = consulta;
+        tope++;
+
+        setTopeConsulta(tope);
+    } else {
+        std::cout << "El socio supero el tope de consultas" << std::endl;
+    }
 }
 
-void Socio::listarConsultas() const {
-    std::cout << "Consultas de Socio " << nombre << " con CI " << ci << ":\n";
-    for (Consulta* consulta : consultas) {
-        std::cout << " - " << consulta->getFechaConsulta().toString()
-                << " Motivo: " << consulta->getMotivo() << std::endl;
+void Socio::listarConsultas() {
+}
+
+void Socio::agregarMascota(Mascota* mascota) {
+    int tope = getTopeConsulta();
+
+    if ( tope <= 10 ) {
+        mascotas[tope] = mascota;
+        tope++;
+
+        setTopeMascota(tope);
+    } else {
+        std::cout << "El socio supero el tope de mascotas" << std::endl;
     }
+}
+
+void Socio::listarMascotas() {
 }
 
 // Destructor
