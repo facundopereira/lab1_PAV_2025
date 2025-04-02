@@ -25,6 +25,4 @@ void Consulta::setFechaConsulta(DtFecha fechaConsulta) {
 }
 
 // Destructor
-Consulta::~Consulta() {
-    std::cout << "Destructor de Consulta " << std::endl;
-}
+Consulta::~Consulta() {}

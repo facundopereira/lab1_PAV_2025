@@ -41,7 +41,7 @@ void Socio::agregarConsulta(Consulta* consulta) {
 }
 
 void Socio::listarConsultas() const {
-    std::cout << "Consultas de " << nombre << " (" << ci << "):\n";
+    std::cout << "Consultas de Socio " << nombre << " con CI " << ci << ":\n";
     for (Consulta* consulta : consultas) {
         std::cout << " - " << consulta->getFechaConsulta().toString()
                 << " Motivo: " << consulta->getMotivo() << std::endl;
