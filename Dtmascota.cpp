@@ -1,11 +1,27 @@
 #include "DtMascota.h"
+#include "Genero.h"
 #include <iostream>
 #include <string>
 
-DtMascota::DtMascota(std::string nombre, /*Genero genero,*/ float peso, float racionDiaria)
-    :nombre(nombre), /*Genero(genero)*/ peso(peso), racionDiaria(racionDiaria){}
+DtMascota::DtMascota(std::string nombre, Genero genero, float peso, float racionDiaria)
+    :nombre(nombre), Genero (genero), peso(peso), racionDiaria(racionDiaria){}
 
 DtMascota::~DtMascota(){}
+Genero DtMascota::getGenero(){
+    return genero;
+}
+
+float DtMascota::getPeso(){
+    return peso;
+}
+
+float DtMascota::getRacionDiaria(){
+    return racionDiaria;
+}
+
+string DtMascota::getNombre(){
+    return nombre;
+}
 
 void DtMascota::mostrarInfo() const {
     std::cout << "Nombre: " <<nombre << "/n";
