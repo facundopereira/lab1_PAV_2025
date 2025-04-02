@@ -3,8 +3,9 @@
 #include <iostream>
 #include <string>
 
+//
 DtMascota::DtMascota(std::string nombre, Genero genero, float peso, float racionDiaria)
-    :nombre(nombre), Genero (genero), peso(peso), racionDiaria(racionDiaria){}
+    :nombre(nombre), genero (genero), peso(peso), racionDiaria(racionDiaria){}
 
 DtMascota::~DtMascota(){}
 Genero DtMascota::getGenero(){

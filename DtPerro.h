@@ -11,8 +11,8 @@ class DtPerro: public DtMascota{
         bool vacunaCachorro;
     public:
         RazaPerro getRazaPerro();
-        bool getVacunaCachorro;
-        DtPerro(RazaPerro raza, bool vacunaCachorro);
+        bool getVacunaCachorro();
+        DtPerro(RazaPerro raza, bool vacunaCachorro ,string nombre, Genero genero, float peso, float racionDIaria);
         ~DtPerro();
 
 };
