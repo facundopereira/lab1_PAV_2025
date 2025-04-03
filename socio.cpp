@@ -66,6 +66,18 @@ void Socio::agregarConsulta(Consulta* consulta) {
 }
 
 void Socio::listarConsultas() {
+    std::cout << "Listado de consultas del socio " << this->nombre << " con CI " << this->ci << ": " << std::endl;
+
+    if ( this->topeConsulta > 0 ) {
+        for ( int i = 0; i <= this->topeConsulta; i++) {
+            if (this->consultas[i] != nullptr) { 
+                std::cout << "- Motivo: " << this->consultas[i]->getMotivo() << std::endl;
+                std::cout << "  Fecha: " << this->consultas[i]->getFechaConsulta().toString() << std::endl;
+            }
+        }
+    } else {
+        std::cout << "El socio no tiene consultas asociadas " << std::endl;
+    }
 }
 
 void Socio::agregarMascota(Mascota* mascota) {
@@ -82,15 +94,37 @@ void Socio::agregarMascota(Mascota* mascota) {
 }
 
 void Socio::listarMascotas() {
+    std::cout << "Listado de mascotas del socio " << this->nombre << " con CI " << this->ci << ": " << std::endl;
+
+    if ( this->topeMascota > 0 ) {
+        for ( int i = 0; i <= this->topeMascota; i++) {
+            if (this->mascota[i] != nullptr) { 
+                // FALTA IMPLEMENTACION
+            }
+        }
+    } else {
+        std::cout << "El socio no tiene mascotas asociadas " << std::endl;
+    }
 }
 
 // Destructor
 Socio::~Socio() {
-    for (Consulta* consulta : consultas) {
-        if (consulta) {
-            delete consulta;
+    if ( this->topeConsulta > 0 ) {
+        for ( int i = 0; i <= this->topeConsulta; i++ ) {
+            if ( this->consultas[i] != nullptr ) {
+                delete this->consultas[i];
+            }
         }
     }
-    consultas.clear();
+
+    if ( this->topeMascota > 0 ) {
+        for ( int i = 0; i <= this->topeMascota; i++ ) {
+            if ( this->mascotas[i] != nullptr ) {
+                delete this->mascotas[i];
+            }
+        }
+    }
+
+    std::cout << "Destructor de Socio ejecutado correctamente." << std::endl;
 }
 
