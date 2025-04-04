@@ -12,12 +12,12 @@ class Socio {
         std::string nombre;
         DtFecha fechaIngreso;
         Consulta* consultas[20];
-        Mascota* Mascota[10];
+        Mascota* mascota[10];
         int topeConsulta, topeMascota;
 
     public:
         // Constructor
-        Socio(std::string ci, std::string nombre, DtFecha fechaIngreso, Mascota* Mascota);
+        Socio(std::string ci, std::string nombre, DtFecha fechaIngreso, Mascota* mascota);
 
         // Getters
         std::string getCi();
