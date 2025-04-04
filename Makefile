@@ -5,7 +5,9 @@ CXX = g++
 CXXFLAGS = -Wall -std=c++11
 
 # Archivos fuente
-SRC = main.cpp
+SRC = main.cpp \
+      DtFecha.cpp DtConsulta.cpp DtMascota.cpp DtPerro.cpp DtGato.cpp \
+      Mascota.cpp Perro.cpp Gato.cpp Consulta.cpp Socio.cpp
 
 # Archivos objeto
 OBJ = $(SRC:.cpp=.o)
