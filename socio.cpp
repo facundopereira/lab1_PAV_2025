@@ -1,4 +1,4 @@
-#include "Socio.h"
+#include "socio.h"
 
 #include <iostream>
 
@@ -42,11 +42,11 @@ void Socio::setFechaIngreso(DtFecha fechaIngreso) {
     this->fechaIngreso = fechaIngreso;
 }
 
-void setTopeConsulta(int topeConsulta) {
+void Socio::setTopeConsulta(int topeConsulta) {
     this->topeConsulta = topeConsulta;
 }
 
-void setTopeMascota(int topeMascota) {
+void Socio::setTopeMascota(int topeMascota) {
     this->topeMascota = topeMascota;
 }
 
@@ -81,7 +81,7 @@ void Socio::listarConsultas() {
 }
 
 void Socio::agregarMascota(Mascota* mascota) {
-    int tope = getTopeConsulta();
+    int tope = getTopeMascota();
 
     if ( tope < 10 ) {
         mascotas[tope] = mascota;
