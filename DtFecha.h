@@ -19,6 +19,8 @@ public:
     int getMes() ;
     int getAno() ;
 
+    std::string toString();
+
 /*Solo le agregaría la de comparar:
 
 bool operator<(DtFecha& otra)
