@@ -23,13 +23,6 @@ int DtFecha::getAno()  {
     return ano; 
 }
 
-std::string DtFecha::toString() const {
-    std::ostringstream oss;
-    oss << std::setfill('0') << std::setw(2) << dia << "/"
-        << std::setfill('0') << std::setw(2) << mes << "/"
-        << anio;
-    return oss.str();
-}
 
 /*Solo le agregaría la de comparar:
 

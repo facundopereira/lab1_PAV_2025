@@ -19,7 +19,6 @@ public:
     int getMes() ;
     int getAno() ;
 
-    std::string toString();
 
 /*Solo le agregaría la de comparar:
 

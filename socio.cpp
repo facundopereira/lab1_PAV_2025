@@ -65,14 +65,19 @@ void Socio::agregarConsulta(Consulta* consulta) {
     }
 }
 
+
+
 void Socio::listarConsultas() {
     std::cout << "Listado de consultas del socio " << this->nombre << " con CI " << this->ci << ": " << std::endl;
 
     if ( this->topeConsulta > 0 ) {
         for ( int i = 0; i < this->topeConsulta; i++) {
             if (this->consultas[i] != nullptr) { 
-                std::cout << "- Motivo: " << this->consultas[i]->getMotivo() << std::endl;
-                std::cout << "  Fecha: " << this->consultas[i]->getFechaConsulta().toString() << std::endl;
+                std::cout << "Motivo de la Consulta: " << this->consultas[i]->getMotivo() << std::endl;
+                std::cout << "Fecha: "
+                << this->consultas[i]->getFechaConsulta().getDia() << "/"
+                << this->consultas[i]->getFechaConsulta().getMes() << "/"
+                << this->consultas[i]->getFechaConsulta().getAno() << std::endl;
             }
         }
     } else {
