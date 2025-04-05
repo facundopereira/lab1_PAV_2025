@@ -12,12 +12,12 @@ class Socio {
         std::string nombre;
         DtFecha fechaIngreso;
         Consulta* consultas[20];
-        Mascota* mascota[10];
+        Mascota* mascotas[10];
         int topeConsulta, topeMascota;
 
     public:
         // Constructor
-        Socio(std::string ci, std::string nombre, DtFecha fechaIngreso, Mascota* mascota);
+        Socio(std::string ci, std::string nombre, DtFecha fechaIngreso);
 
         // Getters
         std::string getCi();
@@ -30,6 +30,8 @@ class Socio {
         void setCi(std::string ci);
         void setNombre(std::string nombre);
         void setFechaIngreso(DtFecha fechaIngreso);
+        void setTopeConsulta(int topeConsulta);
+        void setTopeMascota(int topeMascota);
 
         // Metodos
         void agregarConsulta(Consulta* consulta);

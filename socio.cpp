@@ -4,7 +4,7 @@
 
 
 // Constructor
-Socio::Socio(std::string ci, std::string nombre, DtFecha fechaIngreso, Mascota* mascota) : ci(ci), nombre(nombre), fechaIngreso(fechaIngreso), mascota(mascota), topeConsulta(0), topeMascota(1) {}
+Socio::Socio(std::string ci, std::string nombre, DtFecha fechaIngreso) : ci(ci), nombre(nombre), fechaIngreso(fechaIngreso), topeConsulta(0), topeMascota(1) {}
 
 
 // Getters
@@ -22,7 +22,7 @@ DtFecha Socio::getFechaIngreso() {
 }
 
 int Socio::getTopeConsulta() {
-    return this->TopeConsulta;
+    return this->topeConsulta;
 }
 
 int Socio::getTopeMascota() {
@@ -55,7 +55,7 @@ void setTopeMascota(int topeMascota) {
 void Socio::agregarConsulta(Consulta* consulta) {
     int tope = getTopeConsulta();
 
-    if ( tope <= 20 ) {
+    if ( tope < 20 ) {
         consultas[tope] = consulta;
         tope++;
 
@@ -69,7 +69,7 @@ void Socio::listarConsultas() {
     std::cout << "Listado de consultas del socio " << this->nombre << " con CI " << this->ci << ": " << std::endl;
 
     if ( this->topeConsulta > 0 ) {
-        for ( int i = 0; i <= this->topeConsulta; i++) {
+        for ( int i = 0; i < this->topeConsulta; i++) {
             if (this->consultas[i] != nullptr) { 
                 std::cout << "- Motivo: " << this->consultas[i]->getMotivo() << std::endl;
                 std::cout << "  Fecha: " << this->consultas[i]->getFechaConsulta().toString() << std::endl;
@@ -83,7 +83,7 @@ void Socio::listarConsultas() {
 void Socio::agregarMascota(Mascota* mascota) {
     int tope = getTopeConsulta();
 
-    if ( tope <= 10 ) {
+    if ( tope < 10 ) {
         mascotas[tope] = mascota;
         tope++;
 
@@ -97,7 +97,7 @@ void Socio::listarMascotas() {
     std::cout << "Listado de mascotas del socio " << this->nombre << " con CI " << this->ci << ": " << std::endl;
 
     if ( this->topeMascota > 0 ) {
-        for ( int i = 0; i <= this->topeMascota; i++) {
+        for ( int i = 0; i < this->topeMascota; i++) {
             if (this->mascota[i] != nullptr) { 
                 // FALTA IMPLEMENTACION
             }
@@ -110,7 +110,7 @@ void Socio::listarMascotas() {
 // Destructor
 Socio::~Socio() {
     if ( this->topeConsulta > 0 ) {
-        for ( int i = 0; i <= this->topeConsulta; i++ ) {
+        for ( int i = 0; i < this->topeConsulta; i++ ) {
             if ( this->consultas[i] != nullptr ) {
                 delete this->consultas[i];
             }
@@ -118,7 +118,7 @@ Socio::~Socio() {
     }
 
     if ( this->topeMascota > 0 ) {
-        for ( int i = 0; i <= this->topeMascota; i++ ) {
+        for ( int i = 0; i < this->topeMascota; i++ ) {
             if ( this->mascotas[i] != nullptr ) {
                 delete this->mascotas[i];
             }
